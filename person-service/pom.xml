@@ -25,24 +25,14 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-contract-verifier</artifactId>
+			<version>2.1.1.RELEASE</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-
-	<dependencyManagement>
-		<dependencies>
-			<dependency>
-				<groupId>org.springframework.cloud</groupId>
-				<artifactId>spring-cloud-dependencies</artifactId>
-				<version>Finchley.RELEASE</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
-		</dependencies>
-	</dependencyManagement>
 
 	<build>
 		<plugins>
@@ -55,7 +45,16 @@
 				<artifactId>spring-cloud-contract-maven-plugin</artifactId>
 				<extensions>true</extensions>
 				<configuration>
-					<baseClassForTests>pl.piomin.services.person.BasePersonContractTest</baseClassForTests>
+					<baseClassForTests>pl.piomin.services.person.BasePersonContractTest</baseClassForTests>	
+					<contractsMode>REMOTE</contractsMode>
+					<contractsRepositoryUrl>http://10.231.194.189:8181/artifactory/libs-snapshot-local</contractsRepositoryUrl>
+					<contractsRepositoryUsername>admin</contractsRepositoryUsername>
+					<contractsRepositoryPassword>AP3NrhyDSXYbLEUgt9rPnvCgNcT</contractsRepositoryPassword>	
+					<contractDependency>
+						<groupId>pl.piomin.services</groupId>
+    					<artifactId>contracts</artifactId>
+    					<version>0.0.1-20190917.195656-1</version>
+					</contractDependency>			
 				</configuration>
 			</plugin>
 		</plugins>
