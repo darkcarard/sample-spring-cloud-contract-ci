@@ -47,7 +47,7 @@
 				<configuration>
 					<baseClassForTests>pl.piomin.services.person.BasePersonContractTest</baseClassForTests>	
 					<contractsMode>REMOTE</contractsMode>
-					<contractsRepositoryUrl>http://10.231.194.189:8181/artifactory/libs-snapshot-local</contractsRepositoryUrl>
+					<contractsRepositoryUrl>http://172.25.11.14:8181/artifactory/libs-snapshot-local</contractsRepositoryUrl>
 					<contractsRepositoryUsername>admin</contractsRepositoryUsername>
 					<contractsRepositoryPassword>AP3NrhyDSXYbLEUgt9rPnvCgNcT</contractsRepositoryPassword>	
 					<contractDependency>
